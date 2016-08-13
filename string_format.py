@@ -1,10 +1,6 @@
 #!/usr/bin/env python
 # Learning about string format session
-width = int(raw_input('Enter a width number[10-50]: '))
-#if width < 10 or width > 50:
-#   print '\033[31mPlease enter number between 10-50.\033[0m'
-#else:
-#  print 'The width is %d' % width
+width = int(raw_input('Enter a width number: '))
 ori_width = 12
 main_width = width - ori_width
 # define string format as title_format and main_format
