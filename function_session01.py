@@ -34,3 +34,8 @@ print dict['last']
 print 'Get last name which called Will'
 print dict['last']['Will']
 print '\033[34m-\033[0m'*12
+# define a lookup function
+def lookup(data,label,name):
+    return data['lable'].get(name)
+print lookup(dict,'middle','George')
+print lookup(dict,'last','Will')
