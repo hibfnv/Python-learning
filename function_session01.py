@@ -19,3 +19,18 @@ dict['first']['Green']=[me]
 dict['middle']['George']=[me]
 dict['last']['Will']=[me]
 print dict['middle']['George']
+# add more info here
+my_sister='Alice Princess Will'
+dict['first'].setdefault('Alice',[]).append(my_sister)
+dict['middle'].setdefault('Princess',[]).append(my_sister)
+dict['last'].setdefault('Will',[]).append(my_sister)
+print dict['first']['Alice']
+# get middle name here
+print '\033[34m=\033[0m'*12
+print 'Get middle name here:'
+print dict['middle']
+print 'Get last name'
+print dict['last']
+print 'Get last name which called Will'
+print dict['last']['Will']
+print '\033[34m-\033[0m'*12
