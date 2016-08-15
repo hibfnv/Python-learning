@@ -17,7 +17,7 @@ hello_2('Hello','World')
 print 'this is a split body:'
 def hello_3(greeting='Hello',name='World'):
 	print '%s, %s!' % (greeting,name)
-print hello_3()
-print hello_3('Greetings')
-print hello_3('Greetings','World')
-print hello_3('Greetings','Uiverse')
+hello_3()
+hello_3('Greetings')
+hello_3('Greetings','World')
+hello_3('Greetings','Uiverse')
