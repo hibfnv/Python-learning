@@ -1,0 +1,63 @@
+#!/usr/bin/python
+# -*- coding:utf-8 -*-
+# 这是一个将日期进行有效转化成英文日期的小程序，其主要实现功能是通过条件判断和列表进行实现.
+# Author : Eason Xu
+# Define months interchange.
+months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November',
+          'December']
+# Define date ends.
+ends = ['st', 'nd', 'rd'] + 17 * ['th'] + ['st', 'nd', 'rd'] + 7 * ['th'] + ['st']
+a_year = raw_input("请输入要转化的年份: ")
+a_month = raw_input("请输入要转化的月份: ")
+a_day = raw_input("请输入要转化的那天是几号: ")
+if a_year.isalpha() or a_month.isalpha() or a_day.isalpha():
+    print "请输入正确的年、月、日。"
+elif a_year.isdigit() and a_month.isdigit() and a_day.isdigit():
+    n_year = int(a_year)
+    n_month = int(a_month)
+    n_day = int(a_day)
+    if 0 < n_year <= 2100 and 1 <= n_month <= 12 and 1 <= n_day <= 31:
+        month_name = months[n_month - 1]
+        day_name = a_day + ends[n_day - 1]
+        if n_year % 4 == 0:
+            if n_month <= 7:
+                if n_month == 2:
+                    if n_day > 29:
+                        print a_year + "年" + a_month + "是闰月，有29天。"
+                    else:
+                        print "你输入的日期是：" + month_name + ", " + day_name + ", " + a_year
+                elif n_month % 2 == 0 and n_month != 2:
+                    if n_day == 31:
+                        print "日期错误。" + a_year + "年" + a_month + "月小，只有30天。"
+                    else:
+                        print "你输入的日期是：" + month_name + ", " + day_name + ", " + a_year
+            elif n_month > 7:
+                if n_month % 2 != 0:
+                    if n_day == 31:
+                        print "日期错误，"+ a_year + "年" + a_month + "月小，只有30天。"
+                    else:
+                        print "你输入的日期是：" + month_name + ", " + day_name + ", " + a_year
+        elif n_year % 4 != 0:
+            if n_month <= 7:
+                if n_month == 2:
+                    if n_day > 28:
+                        print a_year + "年" + a_month + "是平月，只有28天。"
+                    else:
+                        print "你输入的日期是：" + month_name + ", " + day_name + ", " + a_year
+                elif n_month % 2 == 0 and n_month != 2:
+                    if n_day == 31:
+                        print "日期错误。"+ a_year + "年" + a_month + "月小，只有30天。"
+                    else:
+                        print "你输入的日期是：" + month_name + ", " + day_name + ", " + a_year
+            elif n_month > 7:
+                if n_month % 2 != 0:
+                    if n_day == 31:
+                        print "日期错误，" + a_month + "月小，只有30天。"
+                    else:
+                        print "你输入的日期是：" + month_name + ", " + day_name + ", " + a_year
+        else:
+            print "你输入的日期有误。"
+    elif a_year > 2100 or a_year <= 0 or a_month < 1 or a_month > 12 or a_day < 1 or a_day > 31:
+        print "请输入年月日的范围[1 - 2100],月份[1 - 12],日期[1 - 31]。"
+else:
+    print "\n"
