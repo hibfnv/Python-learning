@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 # This is a random number compare and sequence in queue script.
 # Author: Eason
-print "数字比较和排序"
+print "随机数字输入及排序"
 print "=" * 20
 x = []
 for i in range(3):
