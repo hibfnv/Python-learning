@@ -34,3 +34,38 @@ t1.greeting()
 print(t2.getname())
 # use greeting function for t2
 t2.greeting()
+# Rebuild the class method for test.
+# Use bird and songbird for test in this example.
+print("="*15+' Split Line '+"="*16)
+class bird:
+    def __init__(self):
+        self.hungry=True
+    def eat(self):
+        if self.hungry:
+            print('Ahhh....')
+            self.hungry=False
+        else:
+            print('No,thanks.')
+# set b as bird class
+b=bird()
+# feed the bird when it is hungry.
+b.eat()
+# The second time to feed the bird, but it is full now.
+b.eat()
+# =============== songbird which it is inherited by bird class =============
+class songbird(bird):
+    def __init__(self):
+        bird.__init__(self)
+        self.sound='Squawk!' 
+    def sing(self):
+        print(self.sound)
+# defind sb as class songbird
+sb=songbird()
+# use sing function for songbird
+sb.sing()
+# use eat function for songbird first time
+sb.eat()
+# use eat funciton for songbird second time.
+sb.eat()
+
+        
